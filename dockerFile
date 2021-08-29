@@ -1,0 +1,13 @@
+FROM node:current
+
+WORKDIR ormapp
+
+RUN npm install -g nodemon
+
+COPY package.json package-lock.json /ormapp
+
+COPY src /ormapp/src
+
+RUN npm install
+
+CMD npm start
